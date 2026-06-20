@@ -188,6 +188,8 @@ footer{
       document.getElementById('entryBtn').onclick = () => {
         window.open(config.entry_form, '_blank');
       };
+      // ★ 追加：会場レイアウトのリンク
+      document.getElementById('layoutMapLink').href = config.layout_map;
     })
     .catch(err => console.error('設定ファイル読み込みエラー:', err));
 </script>
@@ -253,21 +255,16 @@ footer{
 <section id="map">
     <h2>🗺️ 会場案内</h2>
 
-    <div class="info">
-        <p>
-            会場レイアウトはこちらからご確認ください。
-        </p>
+    <div class="info fade-section">
+        <p>会場レイアウトはこちらからご確認ください。</p>
 
         <p>
-            <a href="https://drive.google.com/file/d/1NM4rs0bU_zzQsVKLMKlSysqItX4VfoQ2/view?usp=drive_link"
-               target="_blank">
-               🗺️ 会場レイアウトを見る
+            <a id="layoutMapLink" href="#" target="_blank">
+                🗺️ 会場レイアウトを見る
             </a>
         </p>
     </div>
 </section>
-
-
 
 <section id="faq">
     <h2>❓ よくある質問</h2>

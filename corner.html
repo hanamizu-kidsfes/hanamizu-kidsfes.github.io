@@ -121,9 +121,7 @@ footer{
             アンケートへのご回答をお願いいたします。
         </p>
 
-        <a class="button"
-           href="https://forms.gle/gc57FErAugRbTRGC7"
-           target="_blank">
+        <a class="button" id="cornerSurveyLink" href="#" target="_blank">
            ▶ アンケートを開く
         </a>
     </div>
@@ -135,13 +133,11 @@ footer{
             お問い合わせフォームをご利用ください。
         </p>
 
-        <a class="button"
-           href="https://forms.gle/u6qFCNYD81A14tWXA"
-           target="_blank">
+        <a class="button" id="contactFormLink" href="#" target="_blank">
            ▶ お問い合わせフォーム
         </a>
     </div>
-
+    
     <div class="back">
         <a href="index.html">
             🏠 トップページへ戻る
@@ -149,6 +145,19 @@ footer{
     </div>
 
 </div>
+
+<script>
+  fetch('./link_config.json')
+    .then(r => r.json())
+    .then(config => {
+      // ★ 追加：コーナーアンケート
+      document.getElementById('cornerSurveyLink').href = config.corner_survey;
+
+      // ★ 追加：お問い合わせフォーム
+      document.getElementById('contactFormLink').href = config.contact_form;
+    })
+    .catch(err => console.error('設定ファイル読み込みエラー:', err));
+</script>
 
 <footer>
     花水地区子ども大会実行委員会
