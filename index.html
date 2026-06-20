@@ -4,137 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>花水地区子ども大会</title>
-
-<style>
-body{
-    margin:0;
-    font-family:"Yu Gothic","Meiryo",sans-serif;
-    background:#f8fbff;
-    color:#333;
-}
-
-header{
-    background:linear-gradient(135deg,#4fc3f7,#81c784);
-    color:white;
-    text-align:center;
-    padding:60px 20px;
-}
-
-header h1{
-    margin:0;
-    font-size:3em;
-}
-
-header p{
-    font-size:1.2em;
-    margin-top:15px;
-}
-
-nav{
-    background:#fff;
-    text-align:center;
-    padding:15px;
-    box-shadow:0 2px 5px rgba(0,0,0,0.1);
-}
-
-nav a{
-    text-decoration:none;
-    color:#2196f3;
-    font-weight:bold;
-    margin:0 15px;
-}
-
-section{
-    max-width:1000px;
-    margin:30px auto;
-    padding:20px;
-}
-
-h2{
-    color:#2196f3;
-    border-left:8px solid #ffca28;
-    padding-left:10px;
-}
-
-.info{
-    background:white;
-    border-radius:15px;
-    padding:20px;
-    box-shadow:0 3px 8px rgba(0,0,0,0.1);
-}
-
-.card-container{
-    display:flex;
-    flex-wrap:wrap;
-    gap:20px;
-}
-
-.card{
-    flex:1;
-    min-width:220px;
-    background:white;
-    border-radius:15px;
-    padding:20px;
-    box-shadow:0 3px 8px rgba(0,0,0,0.1);
-}
-
-.qa{
-    background:white;
-    margin-bottom:15px;
-    padding:15px;
-    border-radius:10px;
-    box-shadow:0 2px 5px rgba(0,0,0,0.08);
-}
-
-.notice{
-    background:#fff8e1;
-    border-radius:15px;
-    padding:20px;
-    text-align:center;
-    font-weight:bold;
-    box-shadow:0 3px 8px rgba(0,0,0,0.1);
-}
-
-footer{
-    background:#2196f3;
-    color:white;
-    text-align:center;
-    padding:20px;
-    margin-top:40px;
-}
-
-.schedule-container{
-    display:flex;
-    flex-wrap:wrap;
-    gap:20px;
-}
-.schedule-container .info{
-    flex:1;
-    min-width:300px;
-}
-.mail-link{
-    color:#2196f3;
-    text-decoration:none;
-}
-.apply-buttons{
-    text-align:center;
-    margin-top:20px;
-}
-.apply-btn{
-    display:inline-block;
-    margin:10px;
-    padding:15px 25px;
-    border-radius:30px;
-    background:#2196f3;
-    color:white;
-    text-decoration:none;
-    font-weight:bold;
-}
-.apply-btn:hover{
-    opacity:0.85;
-}
-
-</style>
+<link rel="stylesheet" href="common.css">
+<link rel="stylesheet" href="main.css">
 </head>
 
 <body>
@@ -147,6 +18,7 @@ footer{
 <nav>
     <a href="#overview">開催概要</a>
     <a href="#schedule">開催時間</a>
+    <a href="#signup">参加申し込み</a>
     <a href="#corner">コーナー</a>
     <a href="#map">会場案内</a>
     <a href="#faq">Q&A</a>
@@ -168,32 +40,6 @@ footer{
         <p><strong>会場：</strong>花水小学校 運動場・体育館・体育室・中庭（雨天：体育館・体育室のみ）</p>
     </div>
 
-<div class="apply-buttons">
-  <button class="apply-btn" id="posterBtn">
-    🖍️ 子ども大会のポスターを書こう（4～6年）
-  </button>
-
-  <button class="apply-btn" id="entryBtn">
-    📝 子ども大会参加申し込み（1～6年）
-  </button>
-</div>
-
-<script>
-  fetch('./link_config.json')
-    .then(r => r.json())
-    .then(config => {
-      document.getElementById('posterBtn').onclick = () => {
-        window.open(config.poster_form, '_blank');
-      };
-      document.getElementById('entryBtn').onclick = () => {
-        window.open(config.entry_form, '_blank');
-      };
-      // ★ 追加：会場レイアウトのリンク
-      document.getElementById('layoutMapLink').href = config.layout_map;
-    })
-    .catch(err => console.error('設定ファイル読み込みエラー:', err));
-</script>
-
 </section>
 
 <section id="schedule">
@@ -210,8 +56,6 @@ footer{
         </p>
     </div>
 
-    
-
     <div class="info">
         <h3>② 2・4・6年生（幼児）</h3>
         <p>
@@ -223,6 +67,24 @@ footer{
 
 </div>
 </section>
+
+<section id="signup">
+<h2>🌈 参加申し込み</h2>
+<div class="apply-buttons">
+  <button class="apply-btn" id="posterBtn">
+    🖍️ 子ども大会のポスターを書こう（4～6年）
+  </button>
+
+  <button class="apply-btn" id="entryBtn">
+    📝 子ども大会参加申し込み（1～6年）
+  </button>
+</div>
+
+
+
+
+</section>
+
 
 <section id="corner">
     <h2>🎪 コーナーエリア</h2>
@@ -321,6 +183,22 @@ footer{
 　　　　　
 　　<p>楽しいコーナーがたくさん待っているよ！</p>
 </footer>
+
+<script>
+  fetch('./link_config.json')
+    .then(r => r.json())
+    .then(config => {
+      document.getElementById('posterBtn').onclick = () => {
+        window.open(config.poster_form, '_blank');
+      };
+      document.getElementById('entryBtn').onclick = () => {
+        window.open(config.entry_form, '_blank');
+      };
+      // ★ 追加：会場レイアウトのリンク
+      document.getElementById('layoutMapLink').href = config.layout_map;
+    })
+    .catch(err => console.error('設定ファイル読み込みエラー:', err));
+</script>
 
 </body>
 </html>

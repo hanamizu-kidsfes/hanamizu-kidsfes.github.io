@@ -1,0 +1,67 @@
+/* ===== 共通：基本設定 ===== */
+body{
+    margin:0;
+    font-family:"Yu Gothic","Meiryo",sans-serif;
+    color:#333;
+}
+
+/* ===== 共通：見出し ===== */
+h2{
+    color:#2196f3;
+    border-left:8px solid #ffca28;
+    padding-left:10px;
+}
+
+/* ===== 共通：カード ===== */
+.card{
+    background:white;
+    border-radius:15px;
+    padding:20px;
+    box-shadow:0 3px 8px rgba(0,0,0,0.1);
+}
+
+/* ===== 共通：注意枠 ===== */
+.notice{
+    background:#fff8e1;
+    border-left:8px solid #ffc107;
+    padding:20px;
+    border-radius:15px;
+}
+
+/* ===== 共通：フッター ===== */
+footer{
+    text-align:center;
+    background:#2196f3;
+    color:white;
+    padding:20px;
+    margin-top:40px;
+}
+
+/* ===== 共通：メールリンク ===== */
+.mail-link{
+    color:#2196f3;
+    text-decoration:none;
+}
+
+/* ===== 共通：大きくて優しい薄い青のボタン ===== */
+.apply-btn {
+  font-size: 2.0em;              /* ← 大きい文字 */
+  padding: 25px 35px;            /* ← ボタン自体も大きく */
+  border-radius: 20px;           /* ← 角を丸く */
+  background: #a7d8ff;           /* ← 優しい薄い青 */
+  color: #003366;                /* ← 読みやすい濃い青文字 */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  font-weight: bold;
+  display: inline-block;
+  margin: 20px;
+  cursor: pointer;
+  border: none;
+  transition: 0.2s;
+}
+
+/* ホバー時のアニメーション */
+.apply-btn:hover {
+  background: #c7e6ff;           /* ← さらに明るい薄青 */
+  transform: scale(1.06);        /* ← 少し大きくなる */
+}
+
