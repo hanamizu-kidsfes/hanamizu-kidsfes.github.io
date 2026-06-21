@@ -1,92 +1,18 @@
-/* =========================================
-   共通：基本設定
-========================================= */
+/* ===== 共通：基本設定 ===== */
 body{
     margin:0;
     font-family:"Yu Gothic","Meiryo",sans-serif;
     color:#333;
-    background:#f8fbff; /* MAIN に統一 */
 }
 
-/* =========================================
-   共通：ヘッダー（MAIN に統一）
-========================================= */
-header{
-    background:linear-gradient(135deg,#4fc3f7,#81c784);
-    color:white;
-    text-align:center;
-    padding:60px 20px;
-}
-
-header h1{
-    margin:0;
-    font-size:3em;
-}
-
-header p{
-    font-size:1.2em;
-    margin-top:15px;
-}
-
-/* =========================================
-   共通：ナビ
-========================================= */
-nav{
-    background:#fff;
-    text-align:center;
-    padding:15px;
-    box-shadow:0 2px 5px rgba(0,0,0,0.1);
-}
-nav a{
-    text-decoration:none;
-    color:#2196f3;
-    font-weight:bold;
-    margin:0 15px;
-}
-
-/* =========================================
-   共通：コンテナ
-========================================= */
-.container{
-    max-width:1000px;
-    margin:30px auto;
-    padding:0 20px;
-}
-
-/* =========================================
-   共通：セクション
-========================================= */
-section{
-    max-width:1000px;
-    margin:30px auto;
-    padding:20px;
-}
-
-/* =========================================
-   共通：見出し
-========================================= */
+/* ===== 共通：見出し ===== */
 h2{
     color:#2196f3;
     border-left:8px solid #ffca28;
     padding-left:10px;
 }
 
-/* =========================================
-   共通：カード・info
-========================================= */
-.card-container{
-    display:flex;
-    flex-wrap:wrap;
-    gap:20px;
-}
-
-.info{
-    background:white;
-    border-radius:15px;
-    padding:20px;
-    box-shadow:0 3px 8px rgba(0,0,0,0.1);
-}
-
+/* ===== 共通：カード ===== */
 .card{
     flex:1;
     min-width:220px;
@@ -96,33 +22,7 @@ h2{
     box-shadow:0 3px 8px rgba(0,0,0,0.1);
 }
 
-/* =========================================
-   共通：QA
-========================================= */
-.qa{
-    background:white;
-    margin-bottom:15px;
-    padding:15px;
-    border-radius:10px;
-    box-shadow:0 2px 5px rgba(0,0,0,0.08);
-}
-
-/* =========================================
-   共通：スケジュール
-========================================= */
-.schedule-container{
-    display:flex;
-    flex-wrap:wrap;
-    gap:20px;
-}
-.schedule-container .info{
-    flex:1;
-    min-width:300px;
-}
-
-/* =========================================
-   共通：注意枠
-========================================= */
+/* ===== 共通：注意枠 ===== */
 .notice{
     background:#fff8e1;
     border-left:8px solid #ffc107;
@@ -130,53 +30,7 @@ h2{
     border-radius:15px;
 }
 
-/* =========================================
-   共通：ボタン（MAIN に統一）
-========================================= */
-.button,
-.apply-btn{
-  display:inline-block;
-  font-size:1.4em;
-  padding:20px 30px;
-  border-radius:20px;
-  background:#a7d8ff;
-  color:#003366;
-  text-decoration:none;
-  font-weight:bold;
-  box-shadow:0 6px 12px rgba(0,0,0,0.15);
-  margin:20px 0;
-  cursor:pointer;
-  transition:0.2s;
-  border:none;
-}
-
-.button:hover,
-.apply-btn:hover{
-  background:#c7e6ff;
-  transform:scale(1.06);
-}
-
-/* =========================================
-   共通：戻るボタン
-========================================= */
-.back{
-    text-align:center;
-    margin-top:30px;
-}
-
-.back a{
-    display:inline-block;
-    background:#4caf50;
-    color:white;
-    text-decoration:none;
-    padding:12px 20px;
-    border-radius:8px;
-    font-weight:bold;
-}
-
-/* =========================================
-   共通：フッター
-========================================= */
+/* ===== 共通：フッター ===== */
 footer{
     text-align:center;
     background:#2196f3;
@@ -184,3 +38,32 @@ footer{
     padding:20px;
     margin-top:40px;
 }
+
+/* ===== 共通：メールリンク ===== */
+.mail-link{
+    color:#2196f3;
+    text-decoration:none;
+}
+
+/* ===== 共通：大きくて優しい薄い青のボタン ===== */
+.apply-btn {
+  font-size: 2.0em;              /* ← 大きい文字 */
+  padding: 25px 35px;            /* ← ボタン自体も大きく */
+  border-radius: 20px;           /* ← 角を丸く */
+  background: #a7d8ff;           /* ← 優しい薄い青 */
+  color: #003366;                /* ← 読みやすい濃い青文字 */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  font-weight: bold;
+  display: inline-block;
+  margin: 20px;
+  cursor: pointer;
+  border: none;
+  transition: 0.2s;
+}
+
+/* ホバー時のアニメーション */
+.apply-btn:hover {
+  background: #c7e6ff;           /* ← さらに明るい薄青 */
+  transform: scale(1.06);        /* ← 少し大きくなる */
+}
+
