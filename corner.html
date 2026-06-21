@@ -111,8 +111,9 @@
     .then(data => {
       const messages = [];
 
-      if (data.message) messages.push(data.message);
-      if (data.message2) messages.push(data.message2);
+      if (data.message1) messages.push(data.message1);
+      if (data.message3) messages.push(data.message3);
+      if (data.message4) messages.push(data.message4);
 
       document.getElementById('noticeBox').innerHTML =
         messages.join("<br><br>");
