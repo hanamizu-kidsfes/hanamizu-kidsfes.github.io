@@ -6,6 +6,7 @@
 <title>コーナー参加団体向けページ</title>
 
 <link rel="stylesheet" href="common.css">
+<link rel="stylesheet" href="corner.css">
 </head>
 <body>
 
@@ -14,114 +15,85 @@
     <p>花水地区子ども大会</p>
 </header>
 
-<nav>
-    <a href="index.html">トップ</a>
-    <a href="corner.html">コーナー</a>
-</nav>
-
 <div class="container">
 
-    <!-- ▼ ご案内 -->
-    <section id="notice">
+    <div class="card notice">
         <h2>📢 ご案内</h2>
-        <div class="info notice fade-section" id="noticeBox">
-            読み込み中…
-        </div>
-    </section>
+        <p>
+            コーナー参加団体の皆さま向けのページです。<br>
+            アンケート回答やお問い合わせはこちらからお願いします。
+        </p>
+    </div>
 
-    <!-- ▼ アンケート類 -->
-    <section id="surveys">
-        <h2>📝 各種アンケート</h2>
+<div class="card-container">
+    <!-- コーナー参加団体アンケート -->
+    <div class="card">
+        <h2>📝 コーナー参加団体アンケート</h2>
+        <p>
+            コーナー計画書の提出や各種確認のため、
+            アンケートへのご回答をお願いいたします。
+        </p>
+        <a class="button" id="cornerSurveyLink" href="#" target="_blank">
+            ▶ アンケートを開く
+        </a>
+    </div>
 
-        <div class="card-container fade-section">
+    <!-- コーナー経費精算事前確認 -->
+    <div class="card">
+        <h2>💰 コーナー経費精算事前確認</h2>
+        <p>
+            経費精算の事前確認のため、必要事項の入力をお願いします。
+        </p>
+        <a class="button" id="expenseSurveyLink" href="#" target="_blank">
+            ▶ アンケートを開く
+        </a>
+    </div>
 
-            <div class="card">
-                <h2>📝 コーナー参加団体アンケート</h2>
-                <p>
-                    コーナー計画書の提出や各種確認のため、
-                    アンケートへのご回答をお願いいたします。
-                </p>
-                <a class="button" id="cornerSurveyLink" href="#" target="_blank">
-                    ▶ アンケートを開く
-                </a>
-            </div>
-
-            <div class="card">
-                <h2>💰 コーナー経費精算事前確認</h2>
-                <p>
-                    経費精算の事前確認のため、必要事項の入力をお願いします。
-                </p>
-                <a class="button" id="expenseSurveyLink" href="#" target="_blank">
-                    ▶ アンケートを開く
-                </a>
-            </div>
-
-            <div class="card">
-                <h2>🎈 子ども大会を終えてのご意見・ご感想</h2>
-                <p>
-                    今後の運営改善のため、皆さまのご意見・ご感想をお聞かせください。
-                </p>
-                <a class="button" id="feedbackSurveyLink" href="#" target="_blank">
-                    ▶ アンケートを開く
-                </a>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- ▼ お問い合わせ -->
-    <section id="contact">
+    <!-- 子ども大会を終えてのご意見・ご感想 -->
+    <div class="card">
+        <h2>🎈 子ども大会を終えてのご意見・ご感想</h2>
+        <p>
+            今後の運営改善のため、皆さまのご意見・ご感想をお聞かせください。
+        </p>
+        <a class="button" id="feedbackSurveyLink" href="#" target="_blank">
+            ▶ アンケートを開く
+        </a>
+    </div>
+ </div>
+    <div class="card">
         <h2>📧 お問い合わせ</h2>
-        <div class="info fade-section">
-            <p>
-                ご質問やご相談がございましたら、
-                お問い合わせフォームをご利用ください。
-            </p>
+        <p>
+            ご質問やご相談がございましたら、
+            お問い合わせフォームをご利用ください。
+        </p>
 
-            <a class="button" id="contactFormLink" href="#" target="_blank">
-                ▶ お問い合わせフォーム
-            </a>
-        </div>
-    </section>
+        <a class="button" id="contactFormLink" href="#" target="_blank">
+           ▶ お問い合わせフォーム
+        </a>
+    </div>
+    
+    <div class="back">
+        <a href="index.html">
+            🏠 トップページへ戻る
+        </a>
+    </div>
 
-    <!-- ▼ 戻る -->
-    <section id="back">
-        <div class="back fade-section">
-            <a href="index.html">
-                🏠 トップページへ戻る
-            </a>
-        </div>
-    </section>
-
-</div><!-- container -->
+</div>
 
 <script>
   fetch('./link_config.json')
     .then(r => r.json())
     .then(config => {
+      // コーナーアンケート
       document.getElementById('cornerSurveyLink').href = config.corner_survey;
+      // 経費確認
       document.getElementById('expenseSurveyLink').href = config.corner_expense;
+      // コーナーアンケート
       document.getElementById('feedbackSurveyLink').href = config.corner_feedback;
+      // お問い合わせフォーム
       document.getElementById('contactFormLink').href = config.contact_form;
     })
     .catch(err => console.error('設定ファイル読み込みエラー:', err));
-</script>
-<script>
-fetch('./notice.json')
-  .then(r => r.json())
-  .then(data => {
-    const messages = [];
-
-    if (data.message) messages.push(data.message);
-    if (data.message2) messages.push(data.message2);
-
-    document.getElementById('noticeBox').innerHTML =
-      messages.join("<br><br>");
-  })
-  .catch(err => {
-    console.error('お知らせ読み込みエラー:', err);
-    document.getElementById('noticeBox').innerHTML = "お知らせを読み込めませんでした。";
-  });
 </script>
 
 <footer>
