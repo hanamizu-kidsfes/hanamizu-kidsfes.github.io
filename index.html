@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>花水地区子ども大会</title>
 <link rel="stylesheet" href="common.css">
-<link rel="stylesheet" href="main.css">
 </head>
 
 <body>
@@ -25,11 +24,10 @@
     <a href="corner.html">コーナー団体の方へ</a>
 </nav>
 
-<section>
-    <div class="notice">
-        🚶 駐車場はありません。徒歩でご来場ください。<br><br>
-        🚲 保護者・スタッフのみ自転車利用できます。<br><br>
-        ❌ 子どもの自転車での来場はできません。
+<section id="notice">
+    <h2>📢 お知らせ</h2>
+    <div class="info notice fade-section" id="noticeBox">
+        読み込み中…
     </div>
 </section>
 
@@ -194,10 +192,25 @@
       document.getElementById('entryBtn').onclick = () => {
         window.open(config.entry_form, '_blank');
       };
-      // ★ 追加：会場レイアウトのリンク
+      // 会場レイアウトのリンク
       document.getElementById('layoutMapLink').href = config.layout_map;
     })
     .catch(err => console.error('設定ファイル読み込みエラー:', err));
+
+  fetch('./notice.json')
+    .then(r => r.json())
+    .then(data => {
+      const messages = [];
+
+      if (data.message) messages.push(data.message);
+
+      document.getElementById('noticeBox').innerHTML =
+        messages.join("<br><br>");
+    })
+    .catch(err => {
+      console.error('お知らせ読み込みエラー:', err);
+      document.getElementById('noticeBox').innerHTML = "お知らせを読み込めませんでした。";
+    });
 </script>
 
 </body>
