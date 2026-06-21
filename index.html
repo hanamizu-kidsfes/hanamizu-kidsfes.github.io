@@ -196,21 +196,23 @@
       document.getElementById('layoutMapLink').href = config.layout_map;
     })
     .catch(err => console.error('設定ファイル読み込みエラー:', err));
+</script>
+<script>
+fetch('./notice.json')
+  .then(r => r.json())
+  .then(data => {
+    const messages = [];
 
-  fetch('./notice.json')
-    .then(r => r.json())
-    .then(data => {
-      const messages = [];
+    if (data.message) messages.push(data.message);
+    if (data.message2) messages.push(data.message2);  // ← これが必要！
 
-      if (data.message) messages.push(data.message);
-
-      document.getElementById('noticeBox').innerHTML =
-        messages.join("<br><br>");
-    })
-    .catch(err => {
-      console.error('お知らせ読み込みエラー:', err);
-      document.getElementById('noticeBox').innerHTML = "お知らせを読み込めませんでした。";
-    });
+    document.getElementById('noticeBox').innerHTML =
+      messages.join("<br><br>");
+  })
+  .catch(err => {
+    console.error('お知らせ読み込みエラー:', err);
+    document.getElementById('noticeBox').innerHTML = "お知らせを読み込めませんでした。";
+  });
 </script>
 
 </body>
