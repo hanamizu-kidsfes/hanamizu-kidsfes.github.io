@@ -1,22 +1,9 @@
 {
- "_comment": "子ども大会ポスター（4〜6年）フォームURL",
   "poster_form": "https://forms.gle/gdkmW8Z71qniU8sd9",
-
-　"_comment2": "子ども大会参加申し込み（1〜6年）フォームURL",
   "entry_form": "https://forms.gle/ZnfxXFXvivGbNWYK9",
-
-　"_comment3": "会場レイアウト図のURL",
   "layout_map": "https://drive.google.com/file/d/1NM4rs0bU_zzQsVKLMKlSysqItX4VfoQ2/view?usp=drive_link",
-
-　"_comment4": "コーナー参加申し込み",
   "corner_survey": "https://forms.gle/gc57FErAugRbTRGC7",
-
-　"_comment5": "コーナー経費確認",
   "corner_expense": "https://forms.gle/VtxRUUai41gfabvbA",
-
-　"_comment6": "コーナー子ども大会終えて",
   "corner_feedback": "https://forms.gle/i6ixw6dGxFHVkai76",
-
-　"_comment7": "コーナー問い合わせ",
   "contact_form": "https://forms.gle/u6qFCNYD81A14tWXA"
 }
