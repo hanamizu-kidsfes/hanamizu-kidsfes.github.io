@@ -9,32 +9,38 @@
 </head>
 <body>
 
+<header>
+    <h1>🎪 コーナー参加団体向けページ</h1>
+</header>
 <script>
 fetch("event_config.json")
   .then(res => res.json())
   .then(cfg => {
       const num = cfg.event_number;
 
-      // header を取得
-      const header = document.querySelector("header");
-      if (header) {
+      // h1 を取得
+      const h1 = document.querySelector("h1");
+      if (h1) {
+          const original = h1.textContent.trim();
 
-          // JSON の「第56回」を装飾
+          // 第XX回
           const decorated = `🎉 ${num} 🎉`;
 
-          // header の中身を希望の順番で書き換える（説明文なし）
-          header.innerHTML = `
-              <h1 style="text-align:center;">🎪 コーナー参加団体向けページ</h1>
-              <div style="text-align:center; font-size:1.8em; margin:6px 0;">${decorated}</div>
-              <p style="text-align:center;">🌈 花水地区子ども大会 🌈</p>
-          `;
+          // 改行してセット
+          h1.innerHTML = `${decorated}<br>${original}`;
+
+          // センター揃え
+          h1.style.textAlign = "center";
       }
 
-      // <title> も変更
+      // <title> も変更（絵文字は入れない）
       document.title = `${cfg.event_number} 花水地区子ども大会`;
   });
 </script>
 
+<header>
+    <h1>🌈 花水地区子ども大会 🌈</h1>
+</header>
 <nav>
     <a href="index.html">トップ</a>
     <a href="corner.html">コーナー</a>
