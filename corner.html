@@ -19,17 +19,18 @@ fetch("event_config.json")
       const header = document.querySelector("header");
       if (header) {
 
-          // 元の h1 のテキスト（🌈 花水地区子ども大会 🌈）
-          const original = header.querySelector("h1").textContent.trim();
+          // 既存の h1 と p を取得
+          const title1 = header.querySelector("h1").textContent.trim();  // 🎪 コーナー参加団体向けページ
+          const title2 = header.querySelector("p").textContent.trim();   // 🌈 花水地区子ども大会 🌈
 
-          // 「第XX回」
+          // 第XX回
           const decorated = `🎉 ${num} 🎉`;
 
-          // header の順番かえる
+          // header の順番を書き換える
           header.innerHTML = `
-              <div style="text-align:center; font-size:1.4em;">🎪 コーナー参加団体向けページ</div>
-              <div style="text-align:center; font-size:2em; margin:5px 0;">${decorated}</div>
-              <h1 style="text-align:center;">${original}</h1>
+              <h1 style="text-align:center;">${title1}</h1>
+              <div style="text-align:center; font-size:1.8em; margin:6px 0;">${decorated}</div>
+              <p style="text-align:center;">${title2}</p>
           `;
       }
 
@@ -37,6 +38,13 @@ fetch("event_config.json")
       document.title = `${cfg.event_number} 花水地区子ども大会`;
   });
 </script>
+
+
+
+/*<header>　*/
+  /*  <h1>🎪 コーナー参加団体向けページ</h1>　*/
+   /* <p>花水地区子ども大会</p>　*/
+/*</header>　*/
 
 <nav>
     <a href="index.html">トップ</a>
