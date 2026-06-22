@@ -8,36 +8,35 @@
 <link rel="stylesheet" href="common.css">
 </head>
 <body>
+
 <script>
 fetch("event_config.json")
   .then(res => res.json())
   .then(cfg => {
       const num = cfg.event_number;
 
-      // h1 を取得
       const h1 = document.querySelector("h1");
       if (h1) {
+          // 元のタイトル（🌈 花水地区子ども大会 🌈）
           const original = h1.textContent.trim();
 
-          // 子ども向けの装飾を追加
+          // 「第XX回」
           const decorated = `🎉 ${num} 🎉`;
 
-          // 改行してセット
-          h1.innerHTML = `${decorated}<br>${original}`;
+          // 希望の順番で3行構成にする
+          h1.innerHTML =
+              `🎪 コーナー参加団体向けページ<br>` +
+              `${decorated}<br>` +
+              `${original}`;
 
           // センター揃え
           h1.style.textAlign = "center";
       }
 
-      // <title> も変更（絵文字は入れない）
+      // <title> はシンプルに
       document.title = `${cfg.event_number} 花水地区子ども大会`;
   });
 </script>
-
-<header>
-    <h1>🎪 コーナー参加団体向けページ</h1>
-    <h1>🌈 花水地区子ども大会 🌈</h1>
-</header>
 
 <nav>
     <a href="index.html">トップ</a>
