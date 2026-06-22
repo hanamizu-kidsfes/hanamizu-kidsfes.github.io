@@ -9,10 +9,37 @@
 </head>
 <body>
 
-<header>
-    <h1>🎪 コーナー参加団体向けページ</h1>
-    <p>花水地区子ども大会</p>
-</header>
+<script>
+fetch("event_config.json")
+  .then(res => res.json())
+  .then(cfg => {
+      const num = cfg.event_number;
+
+      // header を取得
+      const header = document.querySelector("header");
+      if (header) {
+
+          // 固定タイトル（上段）
+          const line1 = "🎪 コーナー参加団体向けページ";
+
+          // 第XX回
+          const line2 = `🎉 ${num} 🎉`;
+
+          // 下段（元の大会名）
+          const line3 = "🌈 花水地区子ども大会 🌈";
+
+          // header 順番を書き換える
+          header.innerHTML = `
+              <h1 style="text-align:center;">${line1}</h1>
+              <div style="text-align:center; font-size:1.8em; margin:6px 0;">${line2}</div>
+              <p style="text-align:center;">${line3}</p>
+          `;
+      }
+
+      // <title> も変更
+      document.title = `${cfg.event_number} 花水地区子ども大会`;
+  });
+</script>
 
 <nav>
     <a href="index.html">トップ</a>
