@@ -224,7 +224,7 @@ fetch("event_config.json")
     .catch(err => console.error('設定ファイル読み込みエラー:', err));
 </script>
 <script>
-fetch('./notice.json')
+fetch('./notice_config.json')
   .then(r => r.json())
   .then(data => {
     const messages = [];

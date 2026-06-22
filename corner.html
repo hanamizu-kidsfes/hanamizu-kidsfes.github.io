@@ -106,7 +106,7 @@
     })
     .catch(err => console.error('設定ファイル読み込みエラー:', err));
 
-  fetch('./notice.json')
+  fetch('./notice_config.json')
     .then(r => r.json())
     .then(data => {
       const messages = [];
