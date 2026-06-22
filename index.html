@@ -9,6 +9,32 @@
 
 <body>
 
+<script>
+fetch("event_config.json")
+  .then(res => res.json())
+  .then(cfg => {
+      const num = cfg.event_number;
+
+      // h1 を取得
+      const h1 = document.querySelector("h1");
+      if (h1) {
+          const original = h1.textContent.trim();
+
+          // 子ども向けの装飾を追加
+          const decorated = `🎉 ${num} 🎉`;
+
+          // 改行してセット
+          h1.innerHTML = `${decorated}<br>${original}`;
+
+          // センター揃え
+          h1.style.textAlign = "center";
+      }
+
+      // <title> も変更（絵文字は入れない）
+      document.title = `${cfg.event_number} 花水地区子ども大会`;
+  });
+</script>
+
 <header>
     <h1>🌈 花水地区子ども大会 🌈</h1>
     <p>小学校でスポーツや遊びなど、いろいろな体験をしてみよう！！</p>
