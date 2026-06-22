@@ -19,20 +19,14 @@ fetch("event_config.json")
       const header = document.querySelector("header");
       if (header) {
 
-          // 固定タイトル（上段）
-          const line1 = "🎪 コーナー参加団体向けページ";
+          // JSON の「第56回」を装飾
+          const decorated = `🎉 ${num} 🎉`;
 
-          // 第XX回
-          const line2 = `🎉 ${num} 🎉`;
-
-          // 下段（元の大会名）
-          const line3 = "🌈 花水地区子ども大会 🌈";
-
-          // header 順番を書き換える
+          // header の中身を希望の順番で書き換える（説明文なし）
           header.innerHTML = `
-              <h1 style="text-align:center;">${line1}</h1>
-              <div style="text-align:center; font-size:1.8em; margin:6px 0;">${line2}</div>
-              <p style="text-align:center;">${line3}</p>
+              <h1 style="text-align:center;">🎪 コーナー参加団体向けページ</h1>
+              <div style="text-align:center; font-size:1.8em; margin:6px 0;">${decorated}</div>
+              <p style="text-align:center;">🌈 花水地区子ども大会 🌈</p>
           `;
       }
 
