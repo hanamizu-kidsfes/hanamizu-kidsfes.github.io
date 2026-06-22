@@ -9,38 +9,10 @@
 </head>
 <body>
 
-<script>
-fetch("event_config.json")
-  .then(res => res.json())
-  .then(cfg => {
-      const num = cfg.event_number;
-
-      // 1つ目の header を取得（上の header）
-      const header = document.querySelectorAll("header")[0];
-      if (header) {
-
-          // 上段タイトル（固定）
-          const line1 = "🎪 コーナー参加団体向けページ";
-
-          // JSON の「第XX回」を装飾
-          const line2 = `🎉 ${num} 🎉`;
-
-          // 下段タイトル（2つ目の header の h1）
-          const line3 = document.querySelectorAll("header")[1]
-                          .querySelector("h1").textContent.trim();
-
-          // header を 3 行構成に書き換える
-          header.innerHTML = `
-              <h1 style="text-align:center;">${line1}</h1>
-              <div style="text-align:center; font-size:1.8em; margin:6px 0;">${line2}</div>
-              <p style="text-align:center;">${line3}</p>
-          `;
-      }
-
-      // <title> も変更
-      document.title = `${cfg.event_number} 花水地区子ども大会`;
-  });
-</script>
+<header>
+    <h1>🎪 コーナー参加団体向けページ</h1>
+    <p>花水地区子ども大会</p>
+</header>
 
 <nav>
     <a href="index.html">トップ</a>
