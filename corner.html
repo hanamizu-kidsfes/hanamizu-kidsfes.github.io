@@ -11,7 +11,7 @@
 
 <header>
     <h1>🎪 コーナー参加団体向けページ</h1>
-    <h2 id="eventTitle"></h2>
+    <h1 id="eventTitle"></h1>
 </header>
 
 <script>
@@ -19,10 +19,11 @@ fetch("event_config.json")
   .then(res => res.json())
   .then(cfg => {
       const num = cfg.event_number; // 例：第56回
-      const h2 = document.getElementById("eventTitle");
+      const h1 = document.getElementById("eventTitle");
 
-      // h2 を2行構成にする
-      h2.innerHTML = `${num}<br>🌈 花水地区子ども大会 🌈`;
+      // 🎉 第XX回 🎉 ＋ 花水地区子ども大会
+      h1.innerHTML = `🎉 ${num} 🎉<br>🌈 花水地区子ども大会 🌈`;
+      h1.style.textAlign = "center";
   });
 </script>
 
