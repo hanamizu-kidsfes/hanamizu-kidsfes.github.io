@@ -11,8 +11,20 @@
 
 <header>
     <h1>🎪 コーナー参加団体向けページ</h1>
-    <p>花水地区子ども大会</p>
+    <h2 id="eventTitle"></h2>
 </header>
+
+<script>
+fetch("event_config.json")
+  .then(res => res.json())
+  .then(cfg => {
+      const num = cfg.event_number; // 例：第56回
+      const h2 = document.getElementById("eventTitle");
+
+      // h2 を2行構成にする
+      h2.innerHTML = `${num}<br>🌈 花水地区子ども大会 🌈`;
+  });
+</script>
 
 <nav>
     <a href="index.html">トップ</a>
