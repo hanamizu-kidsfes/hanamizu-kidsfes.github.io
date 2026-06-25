@@ -96,6 +96,12 @@ h2{
     border-radius:15px;
     padding:20px;
     box-shadow:0 3px 8px rgba(0,0,0,0.1);
+    transition:0.3s; /* ← ホバー時のアニメを滑らかに */
+}
+
+.card:hover{
+    transform:translateY(-10px); /* ← 浮き上がる */
+    box-shadow:0 10px 20px rgba(0,0,0,0.2); /* ← 影が強くなる */
 }
 
 /* =========================================
