@@ -191,14 +191,15 @@ footer{
 ========================================= */
 .hm-balloon{
     position: absolute;
-    font-size: 40px;
+    font-size: 50px;
     animation: hmFloat 6s infinite ease-in-out;
     user-select: none;
 }
 
-.hm-b1{
-    left: 10%;
-    top: 20px;
+/* 左側に配置する風船 */
+.hm-b-left{
+    left: 5%;   /* 左端からの距離 */
+    top: 40px;  /* 上からの距離 */
 }
 
 /* 浮遊アニメーション（衝突防止） */
