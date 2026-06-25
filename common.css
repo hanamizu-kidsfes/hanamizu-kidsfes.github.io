@@ -166,6 +166,22 @@ h2{
 }
 
 /* =========================================
+   共通：ボタン(大きい)
+========================================= */
+.big-button{
+    display:inline-block;
+    background:#2196f3;
+    color:#fff !important;
+    padding:15px 30px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+}
+.big-button:hover{
+    background:#1976d2;
+}
+
+/* =========================================
    共通：戻るボタン
 ========================================= */
 .back{
