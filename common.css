@@ -187,7 +187,7 @@ footer{
     margin-top:40px;
 }
 /* =========================================
-   風船1個
+   風船
 ========================================= */
 .hm-balloon{
     position: absolute;
@@ -201,10 +201,31 @@ footer{
     left: 5%;   /* 左端からの距離 */
     top: 40px;  /* 上からの距離 */
 }
+/* 右側に配置する風船 */
+.hm-b-right{
+    right: 5%;  /* 右端からの距離 */
+    top: 60px;  /* 上からの距離（左と少しずらすと自然） */
+}
 
 /* 浮遊アニメーション（衝突防止） */
 @keyframes hmFloat{
     0%,100%{ transform: translateY(0); }
     50%{ transform: translateY(-20px); }
 }
+/* =========================================
+   花水子ども大会：タイトルふわっと登場
+========================================= */
+.hm-title-fade{
+    animation: hmTitleFadeIn 1.5s ease;
+}
 
+@keyframes hmTitleFadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
