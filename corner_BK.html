@@ -82,20 +82,6 @@ fetch("event_config.json")
         </div>
     </section>
 
-    <!-- ▼ 資料ダウンロード -->
-    <section id="download">
-        <h2>📝 資料ダウンロード</h2>
-            <div class="card">
-                  <p>
-                      コーナー計画書・説明資料・明細書をまとめています。
-                      ダウンロードしてご利用ください。
-                  </p>
-                  <a class="button" id="allZipLink" href="#" download>
-                      ▶ 一括ダウンロード
-                  </a>
-            </div>
-    </section>
-
     <!-- ▼ お問い合わせ -->
     <section id="contact">
         <h2>📧 お問い合わせ</h2>
@@ -130,10 +116,6 @@ fetch("event_config.json")
       document.getElementById('expenseSurveyLink').href = config.corner_expense;
       document.getElementById('feedbackSurveyLink').href = config.corner_feedback;
       document.getElementById('contactFormLink').href = config.contact_form;
-      // ★ ZIP のリンク
-      if (config.all_zip) {
-        document.getElementById('allZipLink').href = config.all_zip;
-      }
     })
     .catch(err => console.error('設定ファイル読み込みエラー:', err));
 
