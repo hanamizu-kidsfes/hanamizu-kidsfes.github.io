@@ -261,7 +261,9 @@ footer{
   font-weight: bold;
   color: #d4af37; /* ゴールド。変更OK */
 }
-
+#event-date {
+  margin-top: 0;
+}
 .sparkle {
   position: relative;
   display: inline-block;
