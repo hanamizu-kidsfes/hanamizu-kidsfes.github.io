@@ -74,14 +74,6 @@ h2{
 }
 
 /* =========================================
-   共通：太字
-========================================= */
-.event-date {
-  font-size: 1.8em;
-  font-weight: bold;
-}
-
-/* =========================================
    共通：カード・info
 ========================================= */
 .card-container{
@@ -261,3 +253,32 @@ footer{
         transform: translateY(0);
     }
 }
+/* =========================================
+   日付：カラフル
+========================================= */
+.event-date {
+  font-size: 2em;
+  font-weight: bold;
+  color: #d4af37; /* ゴールド。変更OK */
+}
+
+.sparkle {
+  position: relative;
+  display: inline-block;
+}
+
+.sparkle::after {
+  content: "✨";
+  position: absolute;
+  right: -1.2em;
+  top: -0.3em;
+  animation: sparkleMove 1.6s infinite ease-in-out;
+  opacity: 0.9;
+}
+
+@keyframes sparkleMove {
+  0%   { transform: scale(0.8) rotate(0deg); opacity: 0.6; }
+  50%  { transform: scale(1.3) rotate(20deg); opacity: 1; }
+  100% { transform: scale(0.8) rotate(0deg); opacity: 0.6; }
+}
+

@@ -37,7 +37,7 @@
 <section id="overview">
     <h2>📅 開催概要</h2>
     <div class="info">
-        <p id="event-date"><strong>開催日：</strong></p>
+　　　　<p id="event-date"><strong>開催日：</strong></p>
         <p><strong>会場：</strong>花水小学校 運動場・体育館・体育室・中庭（雨天：体育館・体育室のみ）</p>
     </div>
 
@@ -210,8 +210,8 @@ fetch("event_config.json")
 fetch("event_config.json")
   .then(res => res.json())
   .then(cfg => {
-      document.getElementById("event-date").innerHTML =
-          `<strong>開催日：</strong><span class="event-date">${cfg.event_date_text}</span>`;
+    document.getElementById("event-date").innerHTML =
+      `<strong>開催日：</strong><span class="event-date sparkle">${cfg.event_date_text}</span>`;
   });
 </script>
 
