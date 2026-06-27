@@ -211,9 +211,11 @@ fetch("event_config.json")
   .then(res => res.json())
   .then(cfg => {
       document.getElementById("event-date").innerHTML =
-          `<strong>開催日：</strong>${cfg.event_date_text}`;
+          `<strong>開催日：</strong><span class="event-date">${cfg.event_date_text}</span>`;
   });
 </script>
+
+// リンク
 <script>
   fetch('./link_config.json')
     .then(r => r.json())
