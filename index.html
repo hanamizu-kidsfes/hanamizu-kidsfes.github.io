@@ -9,32 +9,6 @@
 
 <body>
 
-<script>
-fetch("event_config.json")
-  .then(res => res.json())
-  .then(cfg => {
-      const num = cfg.event_number;
-
-      // h1 を取得
-      const h1 = document.querySelector("h1");
-      if (h1) {
-          const original = h1.textContent.trim();
-
-          // 第XX回
-          const decorated = `🎉 ${num} 🎉`;
-
-          // 改行してセット
-          h1.innerHTML = `${decorated}<br>${original}`;
-
-          // センター揃え
-          h1.style.textAlign = "center";
-      }
-
-      // <title> も変更（絵文字は入れない）
-      document.title = `${cfg.event_number} 花水地区子ども大会`;
-  });
-</script>
-
 <header>
     <div class="hm-balloon hm-b-left">🎈</div>
     <div class="hm-balloon hm-b-right">🎈</div>
@@ -63,7 +37,7 @@ fetch("event_config.json")
 <section id="overview">
     <h2>📅 開催概要</h2>
     <div class="info">
-        <p><strong>開催日：</strong>2026年6月7日（日）</p>
+        <p id="event-date"><strong>開催日：</strong></p>
         <p><strong>会場：</strong>花水小学校 運動場・体育館・体育室・中庭（雨天：体育館・体育室のみ）</p>
     </div>
 
@@ -106,9 +80,6 @@ fetch("event_config.json")
     📝 子ども大会参加申し込み（1～6年）
   </button>
 </div>
-
-
-
 
 </section>
 
@@ -207,6 +178,42 @@ fetch("event_config.json")
     <p>楽しいコーナーがたくさん待っているよ！</p>
 </footer>
 
+// 第XX回
+<script>
+fetch("event_config.json")
+  .then(res => res.json())
+  .then(cfg => {
+      const num = cfg.event_number;
+
+      // h1 を取得
+      const h1 = document.querySelector("h1");
+      if (h1) {
+          const original = h1.textContent.trim();
+
+          // 第XX回
+          const decorated = `🎉 ${num} 🎉`;
+
+          // 改行してセット
+          h1.innerHTML = `${decorated}<br>${original}`;
+
+          // センター揃え
+          h1.style.textAlign = "center";
+      }
+
+      // <title> も変更（絵文字は入れない）
+      document.title = `${cfg.event_number} 花水地区子ども大会`;
+  });
+</script>
+
+// 開催日
+<script>
+fetch("event_config.json")
+  .then(res => res.json())
+  .then(cfg => {
+      document.getElementById("event-date").innerHTML =
+          `<strong>開催日：</strong>${cfg.event_date_text}`;
+  });
+</script>
 <script>
   fetch('./link_config.json')
     .then(r => r.json())
@@ -222,6 +229,8 @@ fetch("event_config.json")
     })
     .catch(err => console.error('設定ファイル読み込みエラー:', err));
 </script>
+
+// お知らせ
 <script>
 fetch('./notice_config.json')
   .then(r => r.json())
